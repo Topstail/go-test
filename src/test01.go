@@ -56,8 +56,24 @@ func main() {
 		fmt.Println("这啥成绩")
 	}
 
+	//定义不定长数组
 	myarr := [...]string{"A", "B", "C"}
 	for v := range myarr {
 		fmt.Println(myarr[v])
 	}
+
+	test()
+	fmt.Println("main")
+}
+
+func test() {
+	defer func() {
+		if err := recover(); err != nil {
+			fmt.Println(err)
+		}
+	}()
+
+	fmt.Println("before")
+	panic("boom")
+	fmt.Println("OK")
 }
