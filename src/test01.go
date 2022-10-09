@@ -36,4 +36,28 @@ func main() {
 	fmt.Println("--", str, "--")
 	fmt.Println("--", &a, "--")
 	fmt.Println("--", a, "--")
+
+	score := 91
+
+	switch {
+	case score > 90:
+		fmt.Println("优秀")
+		fallthrough
+	case score > 80:
+		fmt.Println("良好")
+	case score > 60:
+		fmt.Println("及格")
+	case score > 50:
+		fmt.Println("差")
+		fallthrough
+	case score > 10:
+		fmt.Println("极差")
+	default:
+		fmt.Println("这啥成绩")
+	}
+
+	myarr := [...]string{"A", "B", "C"}
+	for v := range myarr {
+		fmt.Println(myarr[v])
+	}
 }
